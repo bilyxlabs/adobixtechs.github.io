@@ -84,9 +84,17 @@
       gap: 1.1rem;
     }
     .products-page .product-card {
-      border-radius: 16px;
+      border-radius: 24px;
       min-height: 320px;
-      box-shadow: 0 5px 16px var(--shadow-sm);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-color);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .products-page .product-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-color);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
     .products-page .product-content {
       padding: 8px 20px 20px;
@@ -105,9 +113,44 @@
       min-width: 128px;
     }
     @media (max-width: 768px) {
-      .all-apps-topbar { margin-top: 86px; }
-      .products-catalog-head h2 { font-size: 1.75rem; }
       .products-page .products.section { padding-top: 18px; }
+    }
+
+    /* Filter Bar Styles */
+    .products-filter-bar {
+      margin: 24px auto 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-secondary);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+    .filter-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.3);
+      background: rgba(var(--accent-color-rgb), 0.05);
+    }
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      box-shadow: 0 8px 25px rgba(var(--accent-color-rgb), 0.4);
+      transform: translateY(-2px);
+    }
+    .product-card.hidden {
+      display: none;
     }
   </style>
 </head>
@@ -124,6 +167,11 @@
     </div>
   </header>
 
+  <div class="nebula-bg">
+    <div class="glow-point glow-1"></div>
+    <div class="glow-point glow-2"></div>
+  </div>
+
   <main class="main">
     <div class="all-apps-topbar">
       <a href="index.html#products" class="all-apps-back"><i class="bi bi-arrow-left"></i> Back to Home</a>
@@ -133,10 +181,12 @@
         <h2>All Mobile Products</h2>
         <p>Explore every app published by AdobixTech. Open any app to view details, features, and policy information.</p>
       </div>
-      <div class="products-meta-strip" data-aos="fade-up" data-aos-delay="80">
-        <span class="products-meta-pill">11 Apps</span>
-        <span class="products-meta-pill">Productivity + Utility + Finance</span>
-        <span class="products-meta-pill">Android Focused</span>
+      <div class="products-filter-bar" data-aos="fade-up" data-aos-delay="80">
+        <button class="filter-btn active" data-filter="all">All Apps</button>
+        <button class="filter-btn" data-filter="productivity">Productivity</button>
+        <button class="filter-btn" data-filter="finance">Finance</button>
+        <button class="filter-btn" data-filter="utility">Utility</button>
+        <button class="filter-btn" data-filter="security">Security</button>
       </div>
     </div>
     <section class="products section">
@@ -144,17 +194,17 @@
       <div class="container products-container">
         
         <div class="products-grid" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/limitly.png" alt="Limitly app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Limitly</h3><p class="product-description">Smart app and website limiter that helps you cut distractions and stay focused.</p><div class="product-footer"><a href="public/policy/details/limitly-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/habit-loop-pro.png" alt="Habit Loop Pro app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Habit Loop Pro</h3><p class="product-description">Build strong routines with streak tracking, reminders, and clean progress views.</p><div class="product-footer"><a href="public/policy/details/habit-loop-pro-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/focus-mode.png" alt="Focus Mode app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Focus Mode</h3><p class="product-description">Structured focus sessions to improve concentration and avoid burnout.</p><div class="product-footer"><a href="public/policy/details/focus-mode-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/phone-pro.png" alt="Phone Pro app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Phone Pro</h3><p class="product-description">Optimize phone performance with lightweight and practical maintenance tools.</p><div class="product-footer"><a href="public/policy/details/phone-pro-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/eye-sheild.png" alt="Eye Shield app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Eye Shield</h3><p class="product-description">Reduce eye strain with dimming and blue-light friendly presets.</p><div class="product-footer"><a href="public/policy/details/eye-shield-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/expense-pro.png" alt="Expense Pro app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Expense Pro</h3><p class="product-description">Advanced expense tracker with more control for power users.</p><div class="product-footer"><a href="public/policy/details/expense-pro-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/EncryptedQR.png" alt="Encrypted QR app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Encrypted QR</h3><p class="product-description">Create and scan secure QR codes for safer sharing.</p><div class="product-footer"><a href="public/policy/details/encrypted-qr-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/qr.png" alt="QR app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">QR</h3><p class="product-description">Fast QR and barcode scanner with a simple clean interface.</p><div class="product-footer"><a href="public/policy/details/qr-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/BatteryVitals.png" alt="Battery Vitals app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Battery Vitals</h3><p class="product-description">Monitor battery health, temperature, and app-level usage.</p><div class="product-footer"><a href="public/policy/details/battery-vitals-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/internet-blocker.webp" alt="Internet Blocker app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Internet Blocker</h3><p class="product-description">Temporarily block internet for selected apps and stay focused.</p><div class="product-footer"><a href="public/policy/details/internet-blocker-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
-          <div class="product-card"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/expense_loop.png" alt="Expense Loop app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Expense Loop</h3><p class="product-description">Smart expense tracker and budget planner for daily money clarity.</p><div class="product-footer"><a href="public/policy/details/expense-loop-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="productivity"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/limitly.png" alt="Limitly app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Limitly</h3><p class="product-description">Smart app and website limiter that helps you cut distractions and stay focused.</p><div class="product-footer"><a href="public/policy/details/limitly-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="productivity"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/habit-loop-pro.png" alt="Habit Loop Pro app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Habit Loop Pro</h3><p class="product-description">Build strong routines with streak tracking, reminders, and clean progress views.</p><div class="product-footer"><a href="public/policy/details/habit-loop-pro-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="productivity"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/focus-mode.png" alt="Focus Mode app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Focus Mode</h3><p class="product-description">Structured focus sessions to improve concentration and avoid burnout.</p><div class="product-footer"><a href="public/policy/details/focus-mode-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="utility"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/phone-pro.png" alt="Phone Pro app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Phone Pro</h3><p class="product-description">Optimize phone performance with lightweight and practical maintenance tools.</p><div class="product-footer"><a href="public/policy/details/phone-pro-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="utility"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/eye-sheild.png" alt="Eye Shield app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Eye Shield</h3><p class="product-description">Reduce eye strain with dimming and blue-light friendly presets.</p><div class="product-footer"><a href="public/policy/details/eye-shield-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="finance"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/expense-pro.png" alt="Expense Pro app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Expense Pro</h3><p class="product-description">Advanced expense tracker with more control for power users.</p><div class="product-footer"><a href="public/policy/details/expense-pro-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="security"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/EncryptedQR.png" alt="Encrypted QR app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Encrypted QR</h3><p class="product-description">Create and scan secure QR codes for safer sharing.</p><div class="product-footer"><a href="public/policy/details/encrypted-qr-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="utility"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/qr.png" alt="QR app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">QR</h3><p class="product-description">Fast QR and barcode scanner with a simple clean interface.</p><div class="product-footer"><a href="public/policy/details/qr-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="utility"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/BatteryVitals.png" alt="Battery Vitals app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Battery Vitals</h3><p class="product-description">Monitor battery health, temperature, and app-level usage.</p><div class="product-footer"><a href="public/policy/details/battery-vitals-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="productivity"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/internet-blocker.webp" alt="Internet Blocker app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Internet Blocker</h3><p class="product-description">Temporarily block internet for selected apps and stay focused.</p><div class="product-footer"><a href="public/policy/details/internet-blocker-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
+          <div class="product-card cyber-card" data-category="finance"><div class="product-image-wrapper"><img src="public/adobix_assets/img/projects/expense_loop.png" alt="Expense Loop app icon" class="product-image"></div><div class="product-content"><h3 class="product-title">Expense Loop</h3><p class="product-description">Smart expense tracker and budget planner for daily money clarity.</p><div class="product-footer"><a href="public/policy/details/expense-loop-details.html" class="product-btn product-btn-primary"><span>View Details</span></a></div></div></div>
         </div>
       </div>
     </section>
@@ -162,5 +212,36 @@
   <script src="public/adobix_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="public/adobix_assets/vendor/aos/aos.js"></script>
   <script src="public/adobix_assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const productCards = document.querySelectorAll('.product-card');
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active button
+          filterButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          productCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              card.style.display = 'block';
+              card.style.animation = 'fadeInUp 0.4s ease forwards';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          
+          // Refresh AOS
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -16,7 +16,7 @@
   const storedTheme = localStorage.getItem('site-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isDetailsPage = window.location.pathname.includes('/public/policy/details/');
-  const initialTheme = isDetailsPage ? 'light' : (storedTheme || (prefersDark ? 'dark' : 'light'));
+  const initialTheme = 'light';
 
   function applyTheme(theme) {
     const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
@@ -63,6 +63,40 @@
       localStorage.setItem('site-theme', nextTheme);
       applyTheme(nextTheme);
     });
+
+    /**
+     * Cyber-card mouse tracking for radial glow
+     */
+    document.addEventListener('mousemove', (e) => {
+      const cards = document.querySelectorAll('.cyber-card');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    /**
+     * Nebula Particle Generator
+     */
+    const nebula = document.querySelector('.nebula-bg');
+    if (nebula) {
+      const container = document.createElement('div');
+      container.className = 'particles-container';
+      nebula.appendChild(container);
+
+      for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.setProperty('--duration', `${10 + Math.random() * 15}s`);
+        particle.style.animationDelay = `${Math.random() * -20}s`;
+        container.appendChild(particle);
+      }
+    }
   });
 
   /**

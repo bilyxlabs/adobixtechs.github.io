@@ -1,102 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Limitly · App Blocker & Focus Mode | Adobix Tech</title>
   <script>
-    (function(){
+    (function () {
       const stored = localStorage.getItem('site-theme');
       document.documentElement.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
     })();
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="styles/limitly-details.css" rel="stylesheet">
+  <link href="../../adobix_assets/css/ai-upgrade.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
-  <a href="../../../index.html#products" class="back-link"><i class="bi bi-arrow-left"></i> Back to Apps</a>
+  <div class="nebula-bg">
+    <div class="glow-point glow-1"></div>
+    <div class="glow-point glow-2"></div>
+  </div>
+  <div class="container">
+    <a href="../../../index.html#products" class="back-link"><i class="bi bi-arrow-left"></i> Back to Apps</a>
 
-  <!-- Hero section based on Google Play description -->
-  <div class="hero">
-    <div class="hero-icon">
-      <img src="../../adobix_assets/img/projects/limitly.png" alt="Limitly" onerror="this.src='https://placehold.co/400x400?text=Limitly';">
+    <!-- Hero section based on Google Play description -->
+    <div class="hero cyber-card">
+      <div class="hero-icon">
+        <img src="../../adobix_assets/img/projects/limitly.png" alt="Limitly"
+          onerror="this.src='https://placehold.co/400x400?text=Limitly';">
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge"><i class="bi bi-shield-check"></i> 100% Privacy · No Ads</div>
+        <h1 class="hero-title ai-glow-text">Limitly: App-Blocker & Focus Mode</h1>
+        <p class="hero-desc">Take control of screen time, block distracting apps, and build healthier digital habits.
+          Lightweight, ad‑free, and fully offline.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.tools.limity.appblock&hl=en_IN" class="btn-google"
+          target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-google-play"></i> Get on Google Play
+        </a>
+      </div>
     </div>
-    <div class="hero-content">
-      <div class="hero-badge"><i class="bi bi-shield-check"></i> 100% Privacy · No Ads</div>
-      <h1 class="hero-title">Limitly: App-Blocker & Focus Mode</h1>
-      <p class="hero-desc">Take control of screen time, block distracting apps, and build healthier digital habits. Lightweight, ad‑free, and fully offline.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.tools.limity.appblock&hl=en_IN" class="btn-google" target="_blank" rel="noopener noreferrer">
-        <i class="bi bi-google-play"></i> Get on Google Play
-      </a>
-    </div>
-  </div>
 
-  <!-- Key Features (extracted directly from Play Store) -->
-  <h2 class="section-title">🔑 Key features</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon"><i class="bi bi-sliders2"></i></div>
-      <div class="feature-title">Flexible App Blocking</div>
-      <div class="feature-text">Block apps indefinitely or create custom schedules. Perfect for work, study, sleep or general screen time control.</div>
+    <!-- Key Features (extracted directly from Play Store) -->
+    <h2 class="section-title">🔑 Key features</h2>
+    <div class="features-grid">
+      <div class="feature-card cyber-card">
+        <div class="feature-icon"><i class="bi bi-sliders2"></i></div>
+        <div class="feature-title">Flexible App Blocking</div>
+        <div class="feature-text">Block apps indefinitely or create custom schedules. Perfect for work, study, sleep or
+          general screen time control.</div>
+      </div>
+      <div class="feature-card cyber-card">
+        <div class="feature-icon"><i class="bi bi-timer"></i></div>
+        <div class="feature-title">Focus Mode Timer</div>
+        <div class="feature-text">Set a focus session and block selected apps during that time. Helps you stay on track
+          without distractions.</div>
+      </div>
+      <div class="feature-card cyber-card">
+        <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+        <div class="feature-title">Screen Time Control</div>
+        <div class="feature-text">Limit daily usage for specific apps. Build healthier digital habits with personalized
+          time limits.</div>
+      </div>
+      <div class="feature-card cyber-card">
+        <div class="feature-icon"><i class="bi bi-incognito"></i></div>
+        <div class="feature-title">Privacy‑First by Design</div>
+        <div class="feature-text">No internet permission. No ads, no tracking, no data collection. Works entirely
+          offline, never shares your data.</div>
+      </div>
+      <div class="feature-card cyber-card">
+        <div class="feature-icon"><i class="bi bi-shield-lock"></i></div>
+        <div class="feature-title">Secure & Transparent</div>
+        <div class="feature-text">Uses Accessibility only to detect app launches. No keystroke logging, no screen
+          monitoring. All settings stored locally.</div>
+      </div>
+      <div class="feature-card cyber-card">
+        <div class="feature-icon"><i class="bi bi-phone"></i></div>
+        <div class="feature-title">Lightweight & Fast</div>
+        <div class="feature-text">No background drain, no root required. Works on most Android devices and keeps your
+          phone smooth.</div>
+      </div>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon"><i class="bi bi-timer"></i></div>
-      <div class="feature-title">Focus Mode Timer</div>
-      <div class="feature-text">Set a focus session and block selected apps during that time. Helps you stay on track without distractions.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
-      <div class="feature-title">Screen Time Control</div>
-      <div class="feature-text">Limit daily usage for specific apps. Build healthier digital habits with personalized time limits.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><i class="bi bi-incognito"></i></div>
-      <div class="feature-title">Privacy‑First by Design</div>
-      <div class="feature-text">No internet permission. No ads, no tracking, no data collection. Works entirely offline, never shares your data.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><i class="bi bi-shield-lock"></i></div>
-      <div class="feature-title">Secure & Transparent</div>
-      <div class="feature-text">Uses Accessibility only to detect app launches. No keystroke logging, no screen monitoring. All settings stored locally.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"><i class="bi bi-phone"></i></div>
-      <div class="feature-title">Lightweight & Fast</div>
-      <div class="feature-text">No background drain, no root required. Works on most Android devices and keeps your phone smooth.</div>
-    </div>
-  </div>
 
-  <!-- Privacy + data safety statement (exactly from listing) -->
-  <div class="privacy-card">
-    <div class="privacy-text">
-      <h3><i class="bi bi-shield-fill-check"></i> Your privacy is our priority</h3>
-      <p>Limitly operates 100% offline. No data shared with third parties, no data collected. Internet permission is not required. All blocking happens locally on your device.</p>
+    <!-- App Screenshots -->
+    <h2 class="section-title">📸 App Screenshots</h2>
+    <div class="screenshots-section">
+      <div class="screenshot-scroll">
+        <div class="screenshot-item"><img src="../../screenshort/limitly/1.png" alt="Limitly Screenshot 1"></div>
+        <div class="screenshot-item"><img src="../../screenshort/limitly/2.png" alt="Limitly Screenshot 2"></div>
+        <div class="screenshot-item"><img src="../../screenshort/limitly/3.png" alt="Limitly Screenshot 3"></div>
+        <div class="screenshot-item"><img src="../../screenshort/limitly/4.png" alt="Limitly Screenshot 4"></div>
+        <div class="screenshot-item"><img src="../../screenshort/limitly/5.png" alt="Limitly Screenshot 5"></div>
+      </div>
     </div>
-    <a href="../limitly-privacy.html" class="privacy-link">Read privacy policy →</a>
-  </div>
 
-  <!-- Use cases from Play Store -->
-  <h2 class="section-title">📲 Perfect for</h2>
-  <div class="usecase-row">
-    <span class="usecase-tag"><i class="bi bi-book"></i> Students</span>
-    <span class="usecase-tag"><i class="bi bi-briefcase"></i> Professionals</span>
-    <span class="usecase-tag"><i class="bi bi-heart"></i> Digital wellbeing</span>
-    <span class="usecase-tag"><i class="bi bi-people"></i> Parents</span>
-    <span class="usecase-tag"><i class="bi bi-brush"></i> Minimalists</span>
-  </div>
-  <div class="usecase-row" style="margin-top: -16px;">
-    <span class="usecase-tag"><i class="bi bi-youtube"></i> Block social media / games</span>
-    <span class="usecase-tag"><i class="bi bi-stopwatch"></i> Focus sessions & deep work</span>
-  </div>
+    <!-- Privacy + data safety statement (exactly from listing) -->
+    <div class="privacy-card">
+      <div class="privacy-text">
+        <h3><i class="bi bi-shield-fill-check"></i> Your privacy is our priority</h3>
+        <p>Limitly operates 100% offline. No data shared with third parties, no data collected. Internet permission is
+          not required. All blocking happens locally on your device.</p>
+      </div>
+      <a href="../limitly-privacy.html" class="privacy-link">Read privacy policy →</a>
+    </div>
 
-  <!-- simple cta & support info -->
-  <div class="footer-note">
-    <p><i class="bi bi-envelope-paper"></i> Support & suggestions: <a href="mailto:info@adobixtech.in">info@adobixtech.in</a> &nbsp;|&nbsp;
-      <i class="bi bi-android2"></i> Compatible with most Android devices · No root needed</p>
-    <p style="margin-top: 12px;">© Adobix Tech — Take control of your screen time with Limitly</p>
+    <!-- Use cases from Play Store -->
+    <h2 class="section-title">📲 Perfect for</h2>
+    <div class="usecase-row">
+      <span class="usecase-tag"><i class="bi bi-book"></i> Students</span>
+      <span class="usecase-tag"><i class="bi bi-briefcase"></i> Professionals</span>
+      <span class="usecase-tag"><i class="bi bi-heart"></i> Digital wellbeing</span>
+      <span class="usecase-tag"><i class="bi bi-people"></i> Parents</span>
+      <span class="usecase-tag"><i class="bi bi-brush"></i> Minimalists</span>
+    </div>
+    <div class="usecase-row" style="margin-top: -16px;">
+      <span class="usecase-tag"><i class="bi bi-youtube"></i> Block social media / games</span>
+      <span class="usecase-tag"><i class="bi bi-stopwatch"></i> Focus sessions & deep work</span>
+    </div>
+
+    <!-- simple cta & support info -->
+    <div class="footer-note">
+      <p><i class="bi bi-envelope-paper"></i> Support & suggestions: <a
+          href="mailto:info@adobixtech.in">info@adobixtech.in</a> &nbsp;|&nbsp;
+        <i class="bi bi-android2"></i> Compatible with most Android devices · No root needed
+      </p>
+      <p style="margin-top: 12px;">© Adobix Tech — Take control of your screen time with Limitly</p>
+    </div>
   </div>
-</div>
 </body>
+
 </html>
