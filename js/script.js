@@ -2,7 +2,7 @@
 // Load Header
 document.getElementById('header').innerHTML = `
     <header>
-        <a href="index.html" class="logo">
+        <a href="/" class="logo">
             <img src="${
                 window.location.pathname.includes('internet-blocker') ? 'assets/icons/internet_logo.png' : 
                 window.location.pathname.includes('app-blocker') ? 'assets/icons/app_blocker.png' : 
@@ -27,7 +27,7 @@ document.getElementById('header').innerHTML = `
             <i class="fas fa-bars"></i>
         </div>
         <div class="header-links">
-            <a href="index.html" class="${window.location.pathname.endsWith('index.html') ? 'active' : ''}">Home</a>
+            <a href="/" class="${window.location.pathname === '/' || window.location.pathname.endsWith('index.html') ? 'active' : ''}">Home</a>
             <a href="privacy-policy.html" class="${window.location.pathname.endsWith('privacy-policy.html') ? 'active' : ''}">Privacy Policy</a>
             <a href="terms.html" class="${window.location.pathname.endsWith('terms.html') ? 'active' : ''}">Terms</a>
             <a href="faq.html" class="${window.location.pathname.endsWith('faq.html') ? 'active' : ''}">FAQ</a>
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const menuBtn = document.querySelector('.menu-btn');
         const headerLinks = document.querySelector('.header-links');
         const overlayEl = document.querySelector('.overlay');
-        const homeLink = document.querySelector('a[href="index.html"]');
+        const homeLink = document.querySelector('a[href="/"]');
         const logoLink = document.querySelector('.logo');
         const privacyLink = document.querySelector('a[href="privacy-policy.html"]');
         const termsLink = document.querySelector('a[href="terms.html"]');
@@ -114,7 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Set active link based on current page
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || '';
+        const isHome = window.location.pathname === '/' || currentPage === '' || currentPage === 'index.html';
         const navLinks = document.querySelectorAll('.header-links a, .footer-links a');
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPage) {
