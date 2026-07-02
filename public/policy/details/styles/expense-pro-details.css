@@ -27,9 +27,9 @@
       --surface: #141822;
       --surface-card: #1a1f2c;
       --border: #2a313e;
-      --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.85);
+      --text-muted: rgba(255, 255, 255, 0.65);
       --app-primary: #2dd4bf;
       --app-primary-dark: #14b8a6;
     }

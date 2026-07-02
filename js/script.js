@@ -39,13 +39,13 @@ document.getElementById('header').innerHTML = `
 document.getElementById('footer').innerHTML = `
     <footer>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/company/adobixtech" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/adobix" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:info@adobixtech.in" title="Contact Support">
+            <a href="https://www.linkedin.com/company/bilyxlabs" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/bilyxlabs" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:info@bilyx.com" title="Contact Support">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
-        <p style="margin-top: 20px; color: #e0e0e0;">© 2025 Adobix Tech. All rights reserved.</p>
+        <p style="margin-top: 20px; color: #e0e0e0;">© 2025 Bilyx. All rights reserved.</p>
     </footer>
 `;
 

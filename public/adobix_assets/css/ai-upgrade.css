@@ -8,7 +8,7 @@
   --card-glass-light: rgba(255, 255, 255, 0.7);
 }
 
-/* Nebula Background - Light Mode */
+/* Nebula Background */
 .nebula-bg {
   position: fixed;
   top: 0;
@@ -18,7 +18,7 @@
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background-color: var(--bg-light-nebula);
+  background-color: var(--background-color);
 }
 
 .nebula-bg::after {
@@ -89,16 +89,16 @@
   100% { transform: translate(3%, 3%) rotate(3deg) scale(1.05); }
 }
 
-/* Cyber Glow Cards - Light Glassmorphism */
+/* Cyber Glow Cards */
 .cyber-card {
   position: relative;
   overflow: hidden;
-  background: var(--card-glass-light) !important;
+  background: var(--surface-elevated) !important;
   backdrop-filter: blur(20px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid var(--border-color) !important;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05) !important;
+  box-shadow: none !important;
 }
 
 .cyber-card::before {
@@ -144,9 +144,18 @@
   100% { top: 100%; }
 }
 
-/* AI Glow Text Utility - Light Theme */
+/* AI Glow Text Utility */
 .ai-glow-text {
+  color: var(--heading-color) !important;
+  -webkit-text-fill-color: var(--heading-color) !important;
+  background: none !important;
+  text-shadow: none;
+  animation: none;
+}
+
+:root[data-theme="light"] .ai-glow-text {
   color: #1a1f26 !important;
+  -webkit-text-fill-color: #1a1f26 !important;
   text-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.15);
   animation: text-pulse-light 3s infinite alternate;
 }
@@ -269,7 +278,86 @@
   }
 }
 
-/* Force Light Theme for these elements */
-body:not(.dark-mode) {
+:root[data-theme="light"] body {
   color: #334155;
+}
+
+:root[data-theme="dark"] {
+  --bg-light-nebula: #0a0e14;
+  --card-glass-light: rgba(26, 31, 38, 0.88);
+  --accent-color-rgb: 99, 102, 241;
+}
+
+:root[data-theme="dark"] .nebula-bg {
+  background-color: var(--background-color);
+}
+
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .main {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .hero .description p,
+:root[data-theme="dark"] .section-title div,
+:root[data-theme="dark"] .products-intro {
+  color: var(--text-secondary);
+}
+
+:root[data-theme="dark"] .text-gradient {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:root[data-theme="dark"] .nebula-bg::after {
+  background-image:
+    radial-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  opacity: 0.4;
+}
+
+:root[data-theme="dark"] .glow-1 {
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.28) 0%, transparent 70%);
+}
+
+:root[data-theme="dark"] .glow-2 {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.22) 0%, transparent 70%);
+}
+
+:root[data-theme="dark"] .cyber-card {
+  background: var(--surface-elevated) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: none !important;
+}
+
+:root[data-theme="dark"] .cyber-card:hover {
+  border-color: var(--border-hover) !important;
+  box-shadow: none !important;
+}
+
+:root[data-theme="dark"] .ai-glow-text {
+  color: var(--heading-color) !important;
+  -webkit-text-fill-color: var(--heading-color) !important;
+  background: none !important;
+  text-shadow: 0 0 18px rgba(var(--accent-color-rgb), 0.35);
+  animation: text-pulse-dark 3s infinite alternate;
+}
+
+@keyframes text-pulse-dark {
+  0% { text-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.2); }
+  100% { text-shadow: 0 0 24px rgba(var(--accent-color-rgb), 0.45); }
+}
+
+:root[data-theme="dark"] .floating-badge {
+  background: rgba(26, 31, 38, 0.85);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+:root[data-theme="dark"] .header .header-container {
+  border-color: var(--border-color);
 }

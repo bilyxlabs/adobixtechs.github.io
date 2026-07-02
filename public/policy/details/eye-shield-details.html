@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Eye Shield Pro · Blue Light Filter | Adobix Tech</title>
-  <script>
-    (function(){
-      const stored = localStorage.getItem('site-theme');
-      document.documentElement.setAttribute('data-theme', stored === 'dark' ? 'dark' : 'light');
-    })();
-  </script>
+  <title>Eye Shield Pro · Blue Light Filter | Bilyx</title>
+  <script src="../../adobix_assets/js/theme-init.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="styles/eye-shield-details.css" rel="stylesheet">
-  <link href="../../adobix_assets/css/ai-upgrade.css" rel="stylesheet">
+  <link href="../../adobix_assets/css/bilyx-tokens.css" rel="stylesheet">
+  <link href="../../adobix_assets/css/details-unified.css" rel="stylesheet">
 </head>
 <body>
-  <div class="nebula-bg">
-    <div class="glow-point glow-1"></div>
-    <div class="glow-point glow-2"></div>
-  </div>
-<div class="page">
+    <header class="details-topbar">
+    <a href="../../../index.html" class="details-brand">
+      <img src="../../adobix_assets/img/bilyx-logo.png" alt="Bilyx">
+      <span>Bilyx</span>
+    </a>
+    <div class="details-topbar-actions">
+      <nav class="details-topnav" aria-label="Page navigation">
+        <a href="../../../products.html"><i class="bi bi-grid"></i> All Apps</a>
+      </nav>
+      <button class="details-theme-toggle" data-theme-toggle type="button" aria-label="Toggle theme">
+      <i class="bi bi-sun-fill" data-theme-icon></i>
+    </button>
+    </div>
+  </header>
+  <div class="page">
   <div class="back-nav">
-    <a href="../../../index.html#products" class="back-btn"><i class="bi bi-arrow-left-short"></i> Back to Apps</a>
+    <a href="../../../products.html" class="back-btn"><i class="bi bi-arrow-left-short"></i> Back to Apps</a>
   </div>
 
   <!-- hero centered -->
@@ -93,6 +99,7 @@
   <!-- App Screenshots -->
   <h2 class="section-title">📸 App Screenshots</h2>
   <div class="screenshots-section">
+    <p class="screenshot-hint"><i class="bi bi-arrow-left-right"></i> Swipe to browse screenshots</p>
     <div class="screenshot-scroll">
       <div class="screenshot-item"><img src="../../screenshort/eye/1.png" alt="Eye Shield Screenshot 1"></div>
       <div class="screenshot-item"><img src="../../screenshort/eye/2.png" alt="Eye Shield Screenshot 2"></div>
@@ -113,11 +120,23 @@
   </div>
 
   <!-- footer -->
+    <div class="details-cta">
+      <div class="details-cta-text">
+        <h3>Ready to try it?</h3>
+        <p>Available free on Google Play. Built with a privacy-first approach.</p>
+      </div>
+      <div class="details-cta-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.tool.eyeshieldpro&hl=en_IN" class="btn-download" target="_blank" rel="noopener noreferrer"><i class="bi bi-google-play"></i> Get on Google Play</a>
+        <a href="../../../products.html" class="details-cta-secondary"><i class="bi bi-grid"></i> Browse all apps</a>
+      </div>
+    </div>
+
   <div class="footer">
-    <p><i class="bi bi-envelope"></i> Support: <a href="mailto:info@adobixtech.in">info@adobixtech.in</a> &nbsp;|&nbsp;
-      <i class="bi bi-eye"></i> Developed by AdobixTech</p>
-    <p style="margin-top: 12px;">© Adobix Tech — Healthier digital life, one filter at a time</p>
+    <p><i class="bi bi-envelope"></i> Support: <a href="mailto:info@bilyx.com">info@bilyx.com</a> &nbsp;|&nbsp;
+      <i class="bi bi-eye"></i> Developed by Bilyx</p>
+    <p>© Bilyx — Healthier digital life, one filter at a time</p>
   </div>
 </div>
+  <script src="../../adobix_assets/js/details-page.js"></script>
 </body>
 </html>

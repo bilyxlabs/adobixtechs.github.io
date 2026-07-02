@@ -1,7 +1,7 @@
 {
-  "name": "adobix-site",
+  "name": "bilyx-site",
   "version": "1.0.0",
-  "description": "Adobix Technologies website",
+  "description": "Bilyxnologies website",
   "scripts": {
     "deploy": "firebase deploy",
     "deploy:hosting": "firebase deploy --only hosting",

@@ -1,0 +1,71 @@
+/**
+ * Bilyx shared tokens + plain page surfaces (no decorative bg layers).
+ * Load after main.css and ai-upgrade.css.
+ */
+
+:root[data-theme="dark"] {
+  --bilyx-page-bg: #0a0e14;
+  --bilyx-surface: #1a1f26;
+  --bilyx-surface-elevated: #1f252c;
+  --bilyx-border: rgba(255, 255, 255, 0.08);
+
+  --limit-bg: var(--bilyx-page-bg);
+  --qr-bg: var(--bilyx-page-bg);
+  --pp-bg: var(--bilyx-page-bg);
+  --eq-bg: var(--bilyx-page-bg);
+  --el-bg: var(--bilyx-page-bg);
+  --fm-bg: var(--bilyx-page-bg);
+  --ib-bg: var(--bilyx-page-bg);
+  --ep-bg: var(--bilyx-page-bg);
+  --hlp-bg: var(--bilyx-page-bg);
+  --esp-bg: var(--bilyx-page-bg);
+
+  --bg: var(--bilyx-page-bg);
+  --surface: var(--bilyx-surface);
+  --surface-alt: var(--bilyx-surface-elevated);
+  --border: var(--bilyx-border);
+}
+
+:root[data-theme="light"] {
+  --bilyx-page-bg: #f4f7fb;
+  --bilyx-surface: #ffffff;
+  --bilyx-surface-elevated: #f9fbff;
+  --bilyx-border: rgba(15, 23, 42, 0.1);
+
+  --limit-bg: var(--bilyx-page-bg);
+  --qr-bg: var(--bilyx-page-bg);
+  --pp-bg: var(--bilyx-page-bg);
+  --eq-bg: var(--bilyx-page-bg);
+  --el-bg: var(--bilyx-page-bg);
+  --fm-bg: var(--bilyx-page-bg);
+  --ib-bg: var(--bilyx-page-bg);
+  --ep-bg: var(--bilyx-page-bg);
+  --hlp-bg: var(--bilyx-page-bg);
+  --esp-bg: var(--bilyx-page-bg);
+
+  --bg: var(--bilyx-page-bg);
+  --surface: var(--bilyx-surface);
+  --surface-alt: var(--bilyx-surface-elevated);
+  --border: var(--bilyx-border);
+}
+
+/* Hide decorative background layers – pages use normal body/section colors */
+.nebula-bg,
+.products-background,
+body::before {
+  display: none !important;
+}
+
+.hero::before,
+.hero::after,
+.glow-sphere {
+  display: none !important;
+}
+
+.hero {
+  background: var(--background-color);
+}
+
+.footer {
+  margin-top: 0 !important;
+}

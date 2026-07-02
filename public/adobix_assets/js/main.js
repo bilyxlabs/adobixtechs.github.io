@@ -14,9 +14,8 @@
    */
   const root = document.documentElement;
   const storedTheme = localStorage.getItem('site-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isDetailsPage = window.location.pathname.includes('/public/policy/details/');
-  const initialTheme = 'light';
+  const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
 
   function applyTheme(theme) {
     const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
@@ -109,12 +108,10 @@
       "focus mode": "#6366f1",
       "phone pro": "#14b8a6",
       "eye shield": "#0ea5e9",
-      "expense pro": "#10b981",
-      "encrypted qr": "#8b5cf6",
+      "expenseflow pro": "#10b981",
       "qr": "#64748b",
       "battery vitals": "#f59e0b",
-      "internet blocker": "#f43f5e",
-      "expense loop": "#16a34a"
+      "internet blocker": "#f43f5e"
     };
 
     document.querySelectorAll('.product-card').forEach((card) => {
