@@ -706,6 +706,51 @@
   }
 
   /**
+   * Contact email links — reliable open on mobile (mailto) and desktop (Gmail compose)
+   */
+  function initContactEmailLinks() {
+    const DEFAULT_EMAIL = 'adobixtech@gmail.com';
+
+    document.querySelectorAll('[data-open-email]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const to = link.getAttribute('data-open-email') || DEFAULT_EMAIL;
+        const subject = link.getAttribute('data-email-subject') || 'Contact from Bilyx Website';
+        let body = link.getAttribute('data-email-body') || '';
+
+        if (!body) {
+          if (subject === 'App Idea Discussion') {
+            body = 'Hi Bilyx,\n\nI would like to discuss an app idea.\n\nApp concept:\nTarget platform:\nTimeline:\n\nThank you.';
+          } else if (subject === 'Project Proposal Request') {
+            body = 'Hi Bilyx,\n\nI would like to request a proposal for a project.\n\nProject details:\nTimeline:\n\nThank you.';
+          }
+        }
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ''}`;
+        const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ''}`;
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+          window.location.href = mailto;
+          return;
+        }
+
+        const gmailWindow = window.open(gmail, '_blank', 'noopener,noreferrer');
+        if (!gmailWindow) {
+          window.location.href = mailto;
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactEmailLinks);
+  } else {
+    initContactEmailLinks();
+  }
+
+  /**
    * Update Copyright Year
    */
   const currentYear = new Date().getFullYear();
