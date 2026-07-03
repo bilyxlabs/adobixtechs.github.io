@@ -519,8 +519,18 @@ p {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: auto;
   flex-shrink: 0;
+}
+
+@media (min-width: 1200px) {
+  .header-actions {
+    margin-left: 0;
+    gap: 0;
+  }
+
+  .header .theme-toggle {
+    margin-left: 16px;
+  }
 }
 
 .theme-toggle:hover {
