@@ -142,6 +142,7 @@
 
     const originalWidth = track.scrollWidth / 2;
     const speed = 0.8;
+    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
     let rafId = null;
     let isDragging = false;
     let dragStartX = 0;
@@ -186,7 +187,7 @@
       if (!isDragging) return;
       const currentX = getClientX(evt);
       const deltaX = currentX - dragStartX;
-      if (Math.abs(deltaX) > 4) movedDuringDrag = true;
+      if (Math.abs(deltaX) > (isTouchDevice ? 12 : 4)) movedDuringDrag = true;
       track.scrollLeft = dragStartScroll - deltaX;
     };
 
@@ -194,7 +195,14 @@
       if (!isDragging) return;
       isDragging = false;
       track.classList.remove('is-dragging');
-      start();
+      if (!isTouchDevice) {
+        start();
+      }
+      if (movedDuringDrag) {
+        window.setTimeout(() => {
+          movedDuringDrag = false;
+        }, 80);
+      }
     };
 
     track.addEventListener('mousedown', onDragStart);
@@ -214,22 +222,80 @@
       }
     }, true);
 
-    start();
+    if (!isTouchDevice) {
+      start();
+    }
   });
 
   /**
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.getElementById('navmenu');
+  const headerContainer = document.querySelector('.header .header-container');
+  let navmenuAnchor = null;
+
+  function isMobileNavViewport() {
+    return window.innerWidth < 1200;
+  }
+
+  function mountMobileNavPortal() {
+    if (!navmenu || !headerContainer || navmenu.classList.contains('navmenu-portal')) return;
+
+    navmenuAnchor = document.createComment('navmenu-anchor');
+    const headerActions = headerContainer.querySelector('.header-actions');
+    headerContainer.insertBefore(navmenuAnchor, headerActions);
+    document.body.appendChild(navmenu);
+    navmenu.classList.add('navmenu-portal');
+  }
+
+  function unmountMobileNavPortal() {
+    if (!navmenu || !headerContainer || !navmenu.classList.contains('navmenu-portal')) return;
+
+    if (navmenuAnchor && navmenuAnchor.parentNode) {
+      headerContainer.insertBefore(navmenu, navmenuAnchor);
+      navmenuAnchor.remove();
+      navmenuAnchor = null;
+    }
+
+    navmenu.classList.remove('navmenu-portal');
+  }
+
+  function setMobileNavOpen(open) {
+    const body = document.body;
+    const isOpen = typeof open === 'boolean' ? open : !body.classList.contains('mobile-nav-active');
+
+    body.classList.toggle('mobile-nav-active', isOpen);
+
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.classList.toggle('bi-list', !isOpen);
+      mobileNavToggleBtn.classList.toggle('bi-x', isOpen);
+    }
+
+    if (isMobileNavViewport()) {
+      if (isOpen) {
+        mountMobileNavPortal();
+      } else {
+        unmountMobileNavPortal();
+      }
+    } else {
+      unmountMobileNavPortal();
+    }
+  }
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    setMobileNavOpen();
   }
+
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
+
+  window.addEventListener('resize', () => {
+    if (!isMobileNavViewport()) {
+      setMobileNavOpen(false);
+    }
+  });
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -711,6 +777,15 @@
   function initContactEmailLinks() {
     const DEFAULT_EMAIL = 'adobixtech@gmail.com';
 
+    function openMailto(url) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
     document.querySelectorAll('[data-open-email]').forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
@@ -727,18 +802,25 @@
             body = 'Hi Bilyx,\n\nI would like to request a proposal for a project.\n\nProject details:\nTimeline:\n\nThank you.';
           }
         }
-        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ''}`;
+
         const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ''}`;
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const isInAppBrowser = /FBAN|FBAV|Instagram|Line\/|Twitter|Snapchat|wv/i.test(navigator.userAgent);
 
         if (isMobile) {
-          window.location.href = mailto;
+          if (isInAppBrowser) {
+            window.location.href = gmail;
+            return;
+          }
+
+          // Shorter mailto URLs are more reliable on iOS and Android mail apps.
+          openMailto(`mailto:${to}?subject=${encodeURIComponent(subject)}`);
           return;
         }
 
         const gmailWindow = window.open(gmail, '_blank', 'noopener,noreferrer');
         if (!gmailWindow) {
-          window.location.href = mailto;
+          openMailto(`mailto:${to}?subject=${encodeURIComponent(subject)}${body ? `&body=${encodeURIComponent(body)}` : ''}`);
         }
       });
     });
