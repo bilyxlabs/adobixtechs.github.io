@@ -1,0 +1,21 @@
+:root {
+  --app-primary: #0ea5e9;
+  --app-primary-dark: #0284c7;
+  --app-primary-soft: #38bdf8;
+  --app-glow: rgba(14, 165, 233, 0.14);
+  --bilyx-accent: #0ea5e9;
+  --bilyx-accent-hover: #38bdf8;
+  --bilyx-accent-dark: #0284c7;
+  --bilyx-accent-soft: rgba(14, 165, 233, 0.14);
+}
+
+[data-theme="dark"] {
+  --app-primary: #38bdf8;
+  --app-primary-dark: #0ea5e9;
+  --app-primary-soft: #7dd3fc;
+  --app-glow: rgba(56, 189, 248, 0.16);
+  --bilyx-accent: #38bdf8;
+  --bilyx-accent-hover: #7dd3fc;
+  --bilyx-accent-dark: #0ea5e9;
+  --bilyx-accent-soft: rgba(56, 189, 248, 0.16);
+}

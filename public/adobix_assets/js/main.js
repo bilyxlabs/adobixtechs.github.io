@@ -105,13 +105,17 @@
     const APP_ACCENTS = {
       "limitly": "#ef4444",
       "habit loop pro": "#22c55e",
-      "focus mode": "#6366f1",
+      "netlimit — block internet": "#ea580c",
       "phone pro": "#14b8a6",
       "eye shield": "#0ea5e9",
       "expenseflow pro": "#10b981",
+      "fincalc pro": "#0ea5e9",
       "qr": "#64748b",
       "battery vitals": "#f59e0b",
-      "internet blocker": "#f43f5e"
+      "internet blocker": "#f43f5e",
+      "geosnap": "#2563eb",
+      "bilyx widgets pro": "#ea580c",
+      "bilyx dataflow": "#059669"
     };
 
     document.querySelectorAll('.product-card').forEach((card) => {

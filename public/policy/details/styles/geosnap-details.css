@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --app-primary: #2563eb;
+  --app-primary-dark: #1d4ed8;
+  --app-primary-soft: #60a5fa;
+  --app-glow: rgba(37, 99, 235, 0.1);
+  --bg: #f4f8ff;
+  --surface: #ffffff;
+  --surface-card: #ffffff;
+  --border: #dbeafe;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0e14;
+  --surface: #141822;
+  --surface-card: #1a1f2c;
+  --border: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --app-primary: #60a5fa;
+  --app-primary-dark: #3b82f6;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px 64px;
+}
+
+.back-nav {
+  margin-bottom: 24px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: var(--app-primary);
+}
+
+.hero-dual {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-icon img {
+  width: 120px;
+  height: 120px;
+  border-radius: 28px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--app-primary);
+}
+
+.hero-title {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  max-width: 42rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.35rem;
+  border-radius: 999px;
+  background: var(--app-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-download:hover {
+  background: var(--app-primary-dark);
+  color: #fff;
+}
+
+.section-title {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.features-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: var(--app-primary);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.types-section {
+  margin-bottom: 2.5rem;
+}
+
+.types-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.type-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.privacy-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+}
+
+.privacy-text strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.privacy-text p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.privacy-link {
+  color: var(--app-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.footer a {
+  color: var(--app-primary);
+  text-decoration: none;
+}
