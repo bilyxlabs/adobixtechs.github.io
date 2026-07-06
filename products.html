@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -151,8 +151,12 @@
 
       toggle?.addEventListener('click', () => {
         const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        if (window.BilyxTheme) {
+          window.BilyxTheme.setPreference(next);
+        } else {
+          localStorage.setItem('site-theme', next);
+        }
         root.setAttribute('data-theme', next);
-        localStorage.setItem('site-theme', next);
         syncIcon();
       });
 

@@ -1,12 +1,48 @@
 /**
  * Bilyx theme bootstrap – runs in <head> before paint.
- * Default: dark. Only uses light if the user previously chose light.
- * Also normalizes /index.html URLs to / for clean root URLs.
+ * Default: system (prefers-color-scheme). User toggle saves light/dark override.
  */
 (function () {
-  var stored = localStorage.getItem('site-theme');
-  var theme = stored === 'light' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
+  function getSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  }
+
+  function getStoredTheme() {
+    var stored = localStorage.getItem('site-theme');
+    return stored === 'light' || stored === 'dark' ? stored : null;
+  }
+
+  function resolveTheme() {
+    return getStoredTheme() || getSystemTheme();
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+  }
+
+  applyTheme(resolveTheme());
+
+  window.BilyxTheme = {
+    getSystemTheme: getSystemTheme,
+    getStoredTheme: getStoredTheme,
+    resolveTheme: resolveTheme,
+    applyTheme: applyTheme,
+    setPreference: function (theme) {
+      localStorage.setItem('site-theme', theme === 'dark' ? 'dark' : 'light');
+      applyTheme(theme);
+    }
+  };
+
+  if (!getStoredTheme() && window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      if (!getStoredTheme()) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  }
 
   var path = window.location.pathname;
   if (/\/index\.html$/i.test(path)) {

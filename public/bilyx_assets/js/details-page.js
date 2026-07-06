@@ -6,6 +6,17 @@
 
   const root = document.documentElement;
 
+  function resolveTheme() {
+    if (window.BilyxTheme) {
+      return window.BilyxTheme.resolveTheme();
+    }
+    const stored = localStorage.getItem('site-theme');
+    if (stored === 'light' || stored === 'dark') {
+      return stored;
+    }
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
   function applyTheme(theme) {
     const normalized = theme === 'light' ? 'light' : 'dark';
     root.setAttribute('data-theme', normalized);
@@ -22,14 +33,17 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    const stored = localStorage.getItem('site-theme');
-    applyTheme(stored === 'light' ? 'light' : 'dark');
+    applyTheme(resolveTheme());
 
     const btn = document.querySelector('[data-theme-toggle]');
     if (!btn) return;
     btn.addEventListener('click', function () {
       const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('site-theme', next);
+      if (window.BilyxTheme) {
+        window.BilyxTheme.setPreference(next);
+      } else {
+        localStorage.setItem('site-theme', next);
+      }
       applyTheme(next);
     });
   });

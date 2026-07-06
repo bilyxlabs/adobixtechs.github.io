@@ -13,9 +13,17 @@
    * Theme management (light/dark with persistence)
    */
   const root = document.documentElement;
-  const storedTheme = localStorage.getItem('site-theme');
-  const isDetailsPage = window.location.pathname.includes('/public/policy/details/');
-  const initialTheme = storedTheme === 'light' ? 'light' : 'dark';
+
+  function resolveTheme() {
+    if (window.BilyxTheme) {
+      return window.BilyxTheme.resolveTheme();
+    }
+    const stored = localStorage.getItem('site-theme');
+    if (stored === 'light' || stored === 'dark') {
+      return stored;
+    }
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
 
   function applyTheme(theme) {
     const normalizedTheme = theme === 'dark' ? 'dark' : 'light';
@@ -31,7 +39,7 @@
     }
   }
 
-  applyTheme(initialTheme);
+  applyTheme(resolveTheme());
 
   /**
    * Apply .scrolled class to the body and header as the page is scrolled down
@@ -59,7 +67,11 @@
     themeToggleBtn.addEventListener('click', () => {
       const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
       const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('site-theme', nextTheme);
+      if (window.BilyxTheme) {
+        window.BilyxTheme.setPreference(nextTheme);
+      } else {
+        localStorage.setItem('site-theme', nextTheme);
+      }
       applyTheme(nextTheme);
     });
 
