@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="utf-8">
+  <!-- bilyx-favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="48x48" href="/public/bilyx_assets/img/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/bilyx_assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Privacy Policy | Bilyx — Data Protection &amp; App Privacy</title>
   <meta name="description" content="Read the Bilyx Privacy Policy. Learn how we collect, use, store, and protect your data across our website and Android apps.">
@@ -13,9 +18,32 @@
   <meta property="og:description" content="How Bilyx handles your data across our website and mobile apps.">
   <meta property="og:url" content="https://bilyx.in/privacy-policy.html">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://bilyx.in/public/bilyx_assets/img/bilyx-logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@bilyxlabs">
+  <meta property="og:locale" content="en_IN">
 
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-  <link rel="apple-touch-icon" sizes="180x180" href="/public/bilyx_assets/img/apple-touch-icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bilyx.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://bilyx.in/privacy-policy.html" }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "Privacy Policy | Bilyx",
+        "url": "https://bilyx.in/privacy-policy.html",
+        "description": "How Bilyx collects, uses, stores, and protects your data across our website and Android apps.",
+        "isPartOf": { "@type": "WebSite", "name": "Bilyx", "url": "https://bilyx.in/" }
+      }
+    ]
+  }
+  </script>
 
   <script src="public/bilyx_assets/js/theme-init.js"></script>
 
@@ -42,14 +70,18 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="public/bilyx_assets/img/bilyx-logo.png" alt="Bilyx logo">
-        <h1 class="sitename">Bilyx</h1>
+        <span class="sitename">Bilyx</span>
       </a>
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" aria-label="Main navigation">
         <ul>
           <li><a href="/#hero">Home</a></li>
           <li><a href="/#services">Services</a></li>
-          <li><a href="/#features">Features</a></li>
           <li><a href="/#products">Products</a></li>
+          <li><a href="products.html">All Apps</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms</a></li>
+          <li><a href="cookie-policy.html">Cookies</a></li>
         </ul>
       </nav>
       <div class="header-actions">
@@ -237,6 +269,8 @@
           <ul>
             <li><a href="/#hero">Home</a></li>
             <li><a href="/#services">Services</a></li>
+            <li><a href="/#products">Products</a></li>
+            <li><a href="products.html">All Apps</a></li>
             <li><a href="/#features">Features</a></li>
             <li><a href="/#technologies">Technologies</a></li>
           </ul>

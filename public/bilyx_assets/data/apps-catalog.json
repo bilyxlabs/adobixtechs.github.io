@@ -2,92 +2,144 @@
   {
     "name": "Limitly",
     "slug": "limitly-details",
+    "privacySlug": "limitly-privacy",
     "category": "Productivity",
     "icon": "/public/bilyx_assets/img/projects/limitly.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.limity.appblock&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.limity.appblock&hl=en_IN",
+    "hasScreenshots": true,
+    "seoDescription": "Limitly blocks distracting apps and websites so you stay focused. Features, screenshots, privacy details, and Google Play download.",
+    "privacyDescription": "Limitly privacy policy: on-device app blocking, data collection, storage, and your rights. Published by Bilyx in India."
   },
   {
     "name": "Habit Loop Pro",
     "slug": "habit-loop-pro-details",
+    "privacySlug": "habit-loop-pro-privacy",
     "category": "Productivity",
     "icon": "/public/bilyx_assets/img/projects/habit-loop-pro.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.habitloop.app&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.habitloop.app&hl=en_IN",
+    "hasScreenshots": false,
+    "seoDescription": "Habit Loop Pro helps you build daily routines with streaks and reminders. Features, privacy info, and Google Play download.",
+    "privacyDescription": "Habit Loop Pro privacy policy: habit data stored on your device, reminders, analytics, and how Bilyx protects your information."
   },
   {
     "name": "NetLimit — Block Internet",
     "slug": "focus-mode-details",
+    "privacySlug": "focus-mode-privacy",
     "category": "Productivity",
     "icon": "/public/bilyx_assets/img/projects/netlimit.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.focusinternetblocker&hl=en"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.focusinternetblocker&hl=en",
+    "hasScreenshots": true,
+    "seoDescription": "NetLimit blocks Wi-Fi and mobile data per app with smart schedules and focus modes. Screenshots, privacy, and Google Play link.",
+    "privacyDescription": "NetLimit privacy policy: per-app firewall data, local processing, permissions, and Bilyx data-handling practices."
   },
   {
     "name": "Internet Blocker",
     "slug": "internet-blocker-details",
+    "privacySlug": "internet-blocker-privacy",
     "category": "Productivity",
     "icon": "/public/bilyx_assets/img/projects/internet-blocker.webp",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.internet.blocker&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.internet.blocker&hl=en_IN",
+    "hasScreenshots": true,
+    "seoDescription": "Internet Blocker turns off network access for selected apps to help you focus. Screenshots, privacy policy, and Google Play download.",
+    "privacyDescription": "Internet Blocker privacy policy: network control permissions, on-device rules, and how Bilyx handles your data."
   },
   {
     "name": "ExpenseFlow Pro",
     "slug": "expense-pro-details",
+    "privacySlug": "expense-pro-privacy",
     "category": "Finance",
     "icon": "/public/bilyx_assets/img/projects/expense-pro.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.finance.expensesflow.pro&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.finance.expensesflow.pro&hl=en_IN",
+    "hasScreenshots": true,
+    "seoDescription": "ExpenseFlow Pro is a private, ad-free money manager for budgeting and bill reminders. Screenshots, privacy, and Google Play.",
+    "privacyDescription": "ExpenseFlow Pro privacy policy: financial data stored locally, backups, permissions, and Bilyx privacy commitments."
   },
   {
     "name": "FinCalc Pro",
     "slug": "fincalc-pro-details",
+    "privacySlug": "fincalc-pro-privacy",
     "category": "Finance",
     "icon": "/public/bilyx_assets/img/projects/fincalc-pro.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.finance.calculator.fincalc.pro.app&hl=en"
+    "playStore": "https://play.google.com/store/apps/details?id=com.finance.calculator.fincalc.pro.app&hl=en",
+    "hasScreenshots": false,
+    "seoDescription": "FinCalc Pro offers loan, interest, savings, and investment calculators. Features, privacy info, and Google Play download.",
+    "privacyDescription": "FinCalc Pro privacy policy: calculator inputs, local storage, and how Bilyx protects your financial planning data."
   },
   {
     "name": "Phone Pro",
     "slug": "phone-pro-details",
+    "privacySlug": "phone-pro-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/phone-pro.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.phonefree&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.phonefree&hl=en_IN",
+    "hasScreenshots": false,
+    "seoDescription": "Phone Pro is an ad-free dialer and contact manager with customizable call screens. Privacy info and Google Play download.",
+    "privacyDescription": "Phone Pro privacy policy: contacts, call logs, permissions, and Bilyx data protection for your phone app."
   },
   {
     "name": "Eye Shield",
     "slug": "eye-shield-details",
+    "privacySlug": "eye-shield-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/eye-shield-icon.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tool.eyeshieldpro&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tool.eyeshieldpro&hl=en_IN",
+    "hasScreenshots": true,
+    "seoDescription": "Eye Shield reduces eye strain with screen dimming and blue-light filters. Screenshots, privacy policy, and Google Play.",
+    "privacyDescription": "Eye Shield privacy policy: display overlay permissions, local settings, and how Bilyx safeguards your data."
   },
   {
     "name": "QR",
     "slug": "qr-details",
+    "privacySlug": "qr-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/qr.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.quickqr.pro&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.quickqr.pro&hl=en_IN",
+    "hasScreenshots": false,
+    "seoDescription": "QR is a fast barcode and QR scanner with offline support and no tracking. Features, privacy info, and Google Play download.",
+    "privacyDescription": "QR privacy policy: camera access, scan history, offline processing, and Bilyx privacy practices."
   },
   {
     "name": "Battery Vitals",
     "slug": "battery-vitals-details",
+    "privacySlug": "battery-vitals-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/BatteryVitals.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.battery.vitals&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.battery.vitals&hl=en_IN",
+    "hasScreenshots": false,
+    "seoDescription": "Battery Vitals monitors battery health, temperature, voltage, and per-app power usage. Privacy info and Google Play download.",
+    "privacyDescription": "Battery Vitals privacy policy: battery stats, usage data, local analytics, and Bilyx data protection."
   },
   {
     "name": "GeoSnap",
     "slug": "geosnap-details",
+    "privacySlug": "geosnap-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/geosnap.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.geosnap.gpscamera&hl=en"
+    "playStore": "https://play.google.com/store/apps/details?id=com.geosnap.gpscamera&hl=en",
+    "hasScreenshots": true,
+    "seoDescription": "GeoSnap stamps photos with GPS coordinates, maps, and timestamps for field work. Screenshots, privacy, and Google Play.",
+    "privacyDescription": "GeoSnap privacy policy: location data, photo metadata, gallery storage, and Bilyx privacy commitments."
   },
   {
     "name": "Bilyx Widgets Pro",
     "slug": "bilyx-widgets-details",
+    "privacySlug": "bilyx-widgets-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/bilyx-widgets.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.bilyx.widgets&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.bilyx.widgets&hl=en_IN",
+    "hasScreenshots": true,
+    "seoDescription": "Bilyx Widgets Pro customizes your home screen with widgets and wallpapers. Screenshots, privacy, and Google Play.",
+    "privacyDescription": "Bilyx Widgets Pro privacy policy: home-screen customization, local preferences, and Bilyx data handling."
   },
   {
     "name": "Bilyx DataFlow",
     "slug": "data-pilot-details",
+    "privacySlug": "data-pilot-privacy",
     "category": "Utility",
     "icon": "/public/bilyx_assets/img/projects/data-pilot.png",
-    "playStore": "https://play.google.com/store/apps/details?id=com.tools.datapilot.monitor&hl=en_IN"
+    "playStore": "https://play.google.com/store/apps/details?id=com.tools.datapilot.monitor&hl=en_IN",
+    "hasScreenshots": true,
+    "seoDescription": "Bilyx DataFlow tracks mobile and Wi-Fi usage with per-app stats and speed tests. Screenshots, privacy, and Google Play.",
+    "privacyDescription": "Bilyx DataFlow privacy policy: data usage monitoring, local reports, permissions, and Bilyx privacy practices."
   }
 ]
